@@ -1,0 +1,162 @@
+<head>
+  <style class="vjs-styles-defaults">
+    .video-js {
+      width: 300px;
+      height: 150px;
+    }
+
+    .vjs-fluid {
+      padding-top: 56.25%
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>attention.js Popup Box Library Demos</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+  <link href="attention.css" rel="stylesheet">
+  <style>
+    html {
+      font-family: 'Roboto Condensed', sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+    }
+
+    .intro {
+      position: relative;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .examples {
+      position: relative;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .examples .button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    .examples .new-alert {
+      background-color: #143642;
+    }
+
+    .examples .new-prompt {
+      background-color: #EC9A29;
+    }
+
+    .examples .new-confirm {
+      background-color: #A8201A;
+    }
+  </style>
+  <link rel="preload" href="https://adservice.google.com.au/adsid/integrator.js?domain=www.cssscript.com" as="script">
+  <script src="https://www.googletagservices.com/activeview/js/current/osd.js?cb=%2Fr20100101"></script>
+
+</head>
+
+<body>
+
+  <script
+    src="https://partner.googleadservices.com/gampad/cookie.js?domain=www.cssscript.com&amp;callback=_gfp_s_&amp;client=ca-pub-2783044520727903&amp;cookie=ID%3D97747b587b2d436e-22da113d10c400e2%3AT%3D1602720760%3ART%3D1602720760%3AS%3DALNI_MbD9I-c8jGzTD9PCPvXAEGcDzIVfg"></script>
+  <script src="https://pagead2.googlesyndication.com/pagead/js/r20201012/r20190131/show_ads_impl_fy2019.js"
+    id="google_shimpl"></script>
+  <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+  <script src="attention.js"></script>
+
+  <div class="intro">
+    <h1 class="title">attention.js Popup Box Library Demos</h1>
+    <div class="css-script-ads" align="center" style="margin:30px auto">
+      <!-- CSSScript Demo Page -->
+
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    <div class="demo">
+
+      <h2>Actions:</h2>
+
+    </div>
+  </div>
+
+  <div class="examples">
+
+    <button class="button new-alert">Alert</button>
+    <button class="button new-confirm">Confirm</button>
+    <button class="button new-prompt">Prompt</button>
+
+  </div>
+
+  <script>
+
+    const demo = document.querySelector('.demo');
+
+    document.querySelector('.new-alert').addEventListener('click', function () {
+      new Attention.Alert({
+        title: 'Nice alert!',
+        content: 'This is my content',
+        afterClose: () => {
+          demo.innerHTML += '<h4>Alert was closed</h4>';
+        }
+      });
+    });
+
+    document.querySelector('.new-confirm').addEventListener('click', function () {
+      new Attention.Confirm({
+        title: 'Nice confirm',
+        content: 'This is my content',
+        onCancel: function (component) {
+
+          demo.innerHTML += '<h4>Confirm was canceled</h4>';
+        },
+        onConfirm: function (component) {
+
+          demo.innerHTML += '<h4>Confirm was accepted</h4>';
+        }
+      });
+    });
+
+    document.querySelector('.new-prompt').addEventListener('click', function () {
+      new Attention.Prompt({
+        title: 'Nice prompt',
+        content: 'This is my content',
+        onSubmit: function (component, value) {
+          demo.innerHTML += `<h4>Prompt was submited by following value: ${value}</h4>`;
+        }
+      });
+    });
+  </script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46156385-1', 'cssscript.com');
+    ga('send', 'pageview');
+
+  </script>
+
+
+  <ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><ins
+      id="aswift_1_expand"
+      style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><ins
+        id="aswift_1_anchor"
+        style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent;"><iframe
+          id="aswift_1" name="aswift_1"
+          style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;"
+          sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+          frameborder="0"
+          src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-2783044520727903&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1551878776&amp;plat=1%3A32776%2C2%3A32776%2C9%3A32776%2C10%3A32%2C11%3A32%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C40%3A32&amp;guci=2.2.0.0.2.2.0.0&amp;format=0x0&amp;url=https%3A%2F%2Fwww.cssscript.com%2Fdemo%2Falert-confirm-prompt-popup-attention%2F&amp;ea=0&amp;flash=0&amp;pra=7&amp;wgl=1&amp;tt_state=W3siaXNzdWVyT3JpZ2luIjoiaHR0cHM6Ly9hZHNlcnZpY2UuZ29vZ2xlLmNvbSIsInN0YXRlIjowfV0.&amp;dt=1602730929931&amp;bpp=3&amp;bdt=75&amp;idt=93&amp;shv=r20201012&amp;cbv=r20190131&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D97747b587b2d436e-22da113d10c400e2%3AT%3D1602720760%3ART%3D1602720760%3AS%3DALNI_MbD9I-c8jGzTD9PCPvXAEGcDzIVfg&amp;prev_fmts=728x90&amp;nras=1&amp;correlator=7841625610365&amp;frm=20&amp;pv=1&amp;ga_vid=1565896431.1602720738&amp;ga_sid=1602730930&amp;ga_hid=1363779464&amp;ga_fc=0&amp;iag=0&amp;icsg=43150&amp;dssz=11&amp;mdo=0&amp;mso=0&amp;u_tz=660&amp;u_his=1&amp;u_java=0&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1040&amp;u_aw=1920&amp;u_cd=24&amp;u_nplug=3&amp;u_nmime=4&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1920&amp;bih=937&amp;scr_x=0&amp;scr_y=0&amp;eid=21067422%2C21067584&amp;oid=3&amp;pvsid=469830935806789&amp;pem=557&amp;ref=https%3A%2F%2Fwww.cssscript.com%2Ftag%2Fconfirm%2F&amp;rx=0&amp;eae=2&amp;fc=896&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1040%2C1920%2C937&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=8192&amp;bc=31&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=100"
+          marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"
+          allowfullscreen="true" data-google-container-id="a!1"
+          data-load-complete="true"></iframe></ins></ins></ins><iframe id="google_osd_static_frame_6366776261639"
+    name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe>
+</body>
