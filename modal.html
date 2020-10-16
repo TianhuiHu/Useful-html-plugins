@@ -1,0 +1,107 @@
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--select2-->
+  <link href="../vendor/select2/select2.min.css" rel="stylesheet" media="all">
+  <!--Modal CSS-->
+  <link href="dist/scss/modal.css" rel="stylesheet" media="all">
+  <!--Vue-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+
+  <!--Modal -->
+  <script src="dist/js/modal.js"></script>
+
+</head>
+
+<body>
+  <div class="container" id="app">
+    <div class="add-product" :class="{'open': formOpen}">
+      <div class="button-copy" v-show="!formOpen" @click="formOpen = true">Add Product</div>
+      <form @submit="cancel()">
+        <div class="form--field">
+          <label class="emoji" style="font-size: 25px; text-align: center">
+            Add A New Family Group
+            <input type="checkbox" name="is_featured" v-bind="productData.is_featured">
+            <span></span>
+          </label>
+          <p class="featured-note" style="text-align: center">This would generate a new group code and add a new Family
+            group to the
+            current system</p>
+        </div>
+        <div class="form--field" style="margin-top: 30px; text-align: center">
+          <label>Please Select Dealer Group*</label>
+          <select id='DealerGroup' required>
+            <option value="" disabled selected hidden>Choose Dealer Group...</option>
+            <option value=" value1">Alteris Managed Accounts</option>
+            <option value="value2">Beulah Asset Management</option>
+            <option value="value3">Cashel Family Office</option>
+            <option value="value4">Core Advisor Group Pty Ltd</option>
+            <option value="value5">DFS Advisory</option>
+            <option value="value6">Financial Clarity</option>
+            <option value="value7">Fintech Managed Accounts</option>
+            <option value="value8">First Point Wealth Management</option>
+            <option value="value9">Futuro Financial Services Pty Ltd - Sterling VIP</option>
+            <option value="value10">Gamma Wealth Group Pty Ltd</option>
+            <option value="value11">GPS Wealth</option>
+          </select>
+        </div>
+
+        <div class="form--field" style="text-align: center;margin-top: 20px;">
+          <label>Please Select Product*</label>
+          <select id='Product' required style="width:300px">
+            <option value="value1">MDA</option>
+            <option value="value2">SP</option>
+            <option value="value2">DIYSP</option>
+            <option value="value2">IASMAS</option>
+          </select>
+        </div>
+
+
+        <button type="submit" class="submit-button" style="margin-top: 50px;">Add Family Group</button>
+        <div class="cancel"><span @click="cancel()">Cancel</span></div>
+      </form>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!--Select 2 dropdown box-->
+  <script src='../vendor/select2/select2.min.js' type='text/javascript'></script>
+</body>
+<script>
+  var vue = new Vue({
+    el: '#app',
+    data: {
+      formOpen: false,
+      productData: {
+        title: '',
+        rating: '',
+        price: '',
+        list_price: '',
+        is_featured: false
+      }
+    },
+    methods: {
+      resetForm: function () {
+        this.productData = {
+          title: '',
+          rating: '',
+          price: '',
+          list_price: '',
+          is_featured: false
+        }
+      },
+      cancel: function () {
+        this.formOpen = false;
+        this.resetForm();
+      }
+    }
+  })
+
+  $(document).ready(function () {
+    $("#DealerGroup").select2();
+    $("#Product").select2();
+  });
+
+</script>
